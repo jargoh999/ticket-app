@@ -1,0 +1,51 @@
+.ticket-container {
+    position: relative;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.ticket-container::before,
+.ticket-container::after {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(-45deg);
+    border-radius: 50%;
+}
+
+.ticket-container::before {
+    left: -16px;
+    top: -16px;
+}
+
+.ticket-container::after {
+    right: -16px;
+    top: -16px;
+}
+
+.ticket-container::before:last-of-type,
+.ticket-container::after:last-of-type {
+    top: auto;
+    bottom: -16px;
+}
+
+.inner-glow {
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 20px rgba(38, 182, 182, 0.1);
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.ticket-content {
+    position: relative;
+    background-color: #002626;
+    border-radius: 20px;
+    padding: 4px;
+    overflow: hidden;
+}
